@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Giphy API</title>
+</head>
+
+
+
+<body>
+
+
+  <div id="output">
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // Example queryURL for Giphy API
+    var queryURL = "http://api.sqoot.com/v2/deals?api_key=72287g&callback=bars&location=charlotte&category_slugs=restaurants&per_page=40&page=1&order=distance";
+
+    $.ajax({
+      url: queryURL,
+      method: 'GET'
+    }).done(function(response) {
+      console.log(response);
+    });
+
+    $.getJSON('http://anyorigin.com/go?url=http%3A//api.sqoot.com/v2/deals%3Fapi_key%3D72287g%26callback%3Dbars%26location%3Dcharlotte%26category_slugs%3Drestaurants%26per_page%3D40%26page%3D1%26order%3Ddistance&callback=?', function(data){
+    $('#output').html(data.contents);
+    });
+
+  </script>
+
+</body>
+
+</html>
